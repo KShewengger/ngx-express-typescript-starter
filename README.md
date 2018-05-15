@@ -10,6 +10,8 @@ An Angular and Node Express Typescript starter
 #### How to run
 
 ````
+ $ npm run build          - Installs all package.json from express & angular
+ 
  $ npm run ng-start       - Runs angular at http://localhost:4200
  $ npm run express-start  - Runs express at http://localhost:3000
  $ npm run start          - Runs both angular and express
