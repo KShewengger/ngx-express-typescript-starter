@@ -13,5 +13,7 @@ Combining Routes and its API calls.
      /user
         - index.ts
         - user-api.ts
-
+     /task
+        - index.ts
+        - task-api.ts   
 ````
