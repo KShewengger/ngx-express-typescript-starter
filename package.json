@@ -12,9 +12,16 @@
     "type": "git",
     "url": "git+https://github.com/KShewengerz/ngx-express-typescript-starter.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "angular",
+    "typescript",
+    "express",
+    "babel",
+    "express typescript",
+    "angular express"
+  ],
+  "author": "Kristy Mae Almuete <kristyalmuete@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/KShewengerz/ngx-express-typescript-starter/issues"
   },
