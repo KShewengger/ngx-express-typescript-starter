@@ -7,6 +7,10 @@ An Angular and Node Express Typescript starter
 #### Main Dev Tools Used
 `Angular 5` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel`
 
+
+#### How to install
+` $ npm install ngx-express-typescript-starter`
+
 #### How to run
 
 ````
