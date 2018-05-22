@@ -9,9 +9,8 @@ import * as path from "path";
 import * as favicon from "serve-favicon";
 import * as cors from "cors";
 
-// Api Routes
 import { indexRoutes } from "./routes/index";
-import { userRoutes } from "./routes/user/index";
+import { userRoutes } from "./routes/user/-index";
 
 
 export class Index {
@@ -29,6 +28,10 @@ export class Index {
     this.catchErrors();
   }
   
+  
+  /**
+   * Middlewares
+   */
   private middlewares(): void {
     // this.app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
     this.app.use(cors({ credentials: true, origin: true }));
@@ -40,8 +43,11 @@ export class Index {
     this.app.use(express.static(path.join(__dirname, "public")));
   }
   
+  
+  /**
+   * Error Handlers
+   */
   private catchErrors(): void {
-    // catch 404 and forward to error handler
     this.app.use((req: Request, res: Response, next: NextFunction) => {
       const err: any = new Error("Not Found");
       err.status = 404;
@@ -49,18 +55,20 @@ export class Index {
       next(err);
     });
     
-    // error handler
     this.app.use((err: any, req: Request, res: Response, next: NextFunction) => {
       const statusCode = err.status || 500;
       
       res.locals.message = err.message;
       res.locals.error = req.app.get("env") === "development" ? err : {};
       
-      // render the error page
       res.status(statusCode).send("Server Error");
     });
   }
   
+  
+  /**
+   * Api Routes
+   */
   private routes(): void {
     this.app.use("/", indexRoutes);
     this.app.use("/user", userRoutes);
