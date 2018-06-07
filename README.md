@@ -9,7 +9,12 @@ An Angular and Node Express Typescript starter
 
 
 #### How to install
-` $ npm install ngx-express-typescript-starter`
+` $ npm install ngx-express-typescript-starter` 
+
+or 
+
+` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
+
 
 #### How to run
 
