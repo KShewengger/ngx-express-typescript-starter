@@ -8,11 +8,7 @@ An Angular and Node Express Typescript starter
 `Angular 5` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel`
 
 
-#### How to install
-` $ npm install ngx-express-typescript-starter` 
-
-or 
-
+#### Clone the project
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
 
