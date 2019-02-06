@@ -6,7 +6,7 @@
 
 var AppClass = require('../dist/index');
 var app = new AppClass.Index().app;
-var debug = require('debug')('task-management-system:server');
+var debug = require('debug')('app:server');
 var http = require('http');
 
 /**

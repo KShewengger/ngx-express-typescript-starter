@@ -1,16 +1,13 @@
-"use strict";
+import { Request, Response, NextFunction } from 'express';
+import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
+import * as express from 'express';
+import * as logger from 'morgan';
+import * as path from 'path';
+import * as favicon from 'serve-favicon';
+import * as cors from 'cors';
 
-import { Request, Response, NextFunction } from "express";
-import * as bodyParser from "body-parser";
-import * as cookieParser from "cookie-parser";
-import * as express from "express";
-import * as logger from "morgan";
-import * as path from "path";
-import * as favicon from "serve-favicon";
-import * as cors from "cors";
-
-import { indexRoutes } from "./routes/index";
-import { userRoutes } from "./routes/user/-index";
+import { userRoutes } from './controllers/index';
 
 
 export class Index {
@@ -33,14 +30,14 @@ export class Index {
    * Middlewares
    */
   private middlewares(): void {
-    // this.app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+    // this.app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     this.app.use(cors({ credentials: true, origin: true }));
     
-    this.app.use(logger("dev"));
+    this.app.use(logger('dev'));
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({extended: false}));
     this.app.use(cookieParser());
-    this.app.use(express.static(path.join(__dirname, "public")));
+    this.app.use(express.static(path.join(__dirname, 'public')));
   }
   
   
@@ -49,7 +46,7 @@ export class Index {
    */
   private catchErrors(): void {
     this.app.use((req: Request, res: Response, next: NextFunction) => {
-      const err: any = new Error("Not Found");
+      const err: any = new Error('Not Found');
       err.status = 404;
       
       next(err);
@@ -59,9 +56,9 @@ export class Index {
       const statusCode = err.status || 500;
       
       res.locals.message = err.message;
-      res.locals.error = req.app.get("env") === "development" ? err : {};
+      res.locals.error = req.app.get('env') === 'development' ? err : {};
       
-      res.status(statusCode).send("Server Error");
+      res.status(statusCode).send('Server Error');
     });
   }
   
@@ -70,7 +67,7 @@ export class Index {
    * Api Routes
    */
   private routes(): void {
-    this.app.use("/", indexRoutes);
-    this.app.use("/user", userRoutes);
+    this.app.use('/', (req: Request, res: Response, next: NextFunction) => res.send('Welcome to Express'));
+    this.app.use('/user', userRoutes);
   }
 }
