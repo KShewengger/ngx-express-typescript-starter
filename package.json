@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install && cd ./public/ng-app && npm install",
-    "ng-start": "cd ./public/app && tsc && npm start",
+    "ng-start": "cd ./public/ng-app && tsc && npm start",
     "express-start": "tsc-watch --onSuccess 'nodemon --exec babel-node ./bin/www'",
     "start": "concurrently \"npm run express-start\"  \"npm run ng-start\""
   },
