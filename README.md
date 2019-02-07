@@ -5,7 +5,7 @@ An Angular and Node Express Typescript starter
 
 
 #### Main Dev Tools Used
-`Angular 5` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel`
+`Angular 7` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel`
 
 
 #### Clone the project
