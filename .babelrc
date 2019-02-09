@@ -7,10 +7,10 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
-        "@app/config": ["./config"],
-        "@app/controllers": ["./controllers"],
-        "@app/interfaces": ["./shared/interfaces"],
-        "@app/enums": ["./shared/enums"]
+        "@app/config": ["./dist/config"],
+        "@app/controllers": ["./dist/controllers"],
+        "@app/interfaces": ["./dist/shared/interfaces"],
+        "@app/enums": ["./dist/shared/enums"]
       }
     }]
   ]
