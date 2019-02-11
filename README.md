@@ -18,8 +18,6 @@ or
 WARNING: This doesn't have a global shell command yet 
 and doing an npm install will make this package part of your node_modules, thus:
 
-
-
 1.) You need to cut the CONTENTS (e.g bin, config, controllers, public, tsconfig.json and others) outside of your node_modules and paste it on your root folder 
 
 2.) Copy the scripts commands, dependencies and dev dependencies on your root's package.json and remove the file (package.json) thereafter.
