@@ -16,13 +16,20 @@ or
 
 ```
 WARNING: This doesn't have a global shell command yet 
-and doing an npm install will make this package part of your node_modules, thus:
+and doing so will make this package part of your node_modules, thus:
 
-1.) You need to cut the CONTENTS (e.g bin, config, controllers, public, tsconfig.json and others) outside of your node_modules and paste it on your root folder 
+1.) You need to cut the immendiate CONTENTS (e.g bin, config, controllers, public, tsconfig.json and others) 
+from ngx-express-typescript-starter folder outside of your node_modules and paste it on your root folder 
 
-2.) Copy the scripts commands, dependencies and dev dependencies on your root's package.json and remove the file (package.json) thereafter.
+2.) Copy the scripts commands, dependencies and dev dependencies on your 
+Node's package.json and remove the file (package.json) thereafter.
 
-3.) Initialize a new package.json with $ npm init and paste the script commands, dependencies and dev dependencies that you had copied earlier.
+3.) Initialize a new Node package.json with $npm init and paste the 
+script commands, dependencies and dev dependencies that you had copied earlier 
+to your new package.json file.
+
+
+NOTE: Dont forget to run $ npm run build to install both dependencies from your node and angular
 ```
 
 
