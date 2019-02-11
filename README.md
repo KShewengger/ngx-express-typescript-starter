@@ -69,20 +69,24 @@ NOTE: Update package.json (not on angular directory but on the express root) and
 ```
 
 
-#### Babel and Tsconfig paths support
+#### Babel and tsconfig paths support on Node and Angular
 
 ```
 AVOID:
-import {} from '../../shared/enums/tables/user'
-
+On node    : import {} from '../../shared/enums/tables/user'
+On angular : import {} from './app.component'
 
 INSTEAD USE:
 import {} from '@app/enums';
+import {} from '@app/app.component'   or '@app/user/user.component'
 
 
 NOTE:
-Currently it has supported a couple of paths e.g config, controllers, interfaces and enums. If you want to customized and support some directories, you can do so by updating both the .babelrc and tsconfig.json (express root not on angular)
+- These are set on the respective tsconfig.json on your Node (./tsconfig.json) 
+and Angular (./public/ng-app/tsconfig.json)
 
+- If you want to customized and support some directories, you can do so 
+by updating both the .babelrc and tsconfig.json of express or angular
 ```
  
 
