@@ -23,9 +23,6 @@ and doing an npm install will make this package part of your node_modules, thus:
 2.) Copy the scripts commands, dependencies and dev dependencies on your root's package.json and remove the file (package.json) thereafter.
 
 3.) Initialize a new package.json with $ npm init and paste the script commands, dependencies and dev dependencies that you had copied earlier.
- 
- 
-Preferrable to Clone the project than Install to avoid a hassle setup.
 ```
 
 
