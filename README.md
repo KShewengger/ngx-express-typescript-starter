@@ -64,7 +64,9 @@ $ ng new <your_new_angular_app_name>
 
 
 
-NOTE: Update package.json (not on angular directory but on the express root) and rename the "build" and "ng-start" scripts changing the old "ng-app" to your newly created angular app (new name) 
+NOTE: 
+1.) Update also the Node package.json and rename the "build" and "ng-start" scripts changing the old "ng-app" to your newly created angular app (new name) 
+2.) Update Node Tsconfig path, changing the old angular app name to its new name
 
 ```
 
