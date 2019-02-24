@@ -12,24 +12,16 @@ An Angular and Node Express Typescript Starter Kit
 
 or
 
-#### Installation via $ npm install 
+#### NOTE
+#####Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter`
+
 
 ```
-WARNING: This doesn't have a global shell command yet 
-and doing so will make this package part of your node_modules, thus:
+as this doesn't support a shell script yet.
 
-1.) You need to cut the immendiate CONTENTS (e.g bin, config, controllers, public, tsconfig.json and others) 
-from ngx-express-typescript-starter folder outside of your node_modules and paste it on your root folder 
+You can also fork the github repo :rocket: or even give it a star! :star: 
 
-2.) Copy the scripts commands, dependencies and dev dependencies on your 
-Node's package.json and remove the file (package.json) thereafter.
-
-3.) Initialize a new Node package.json with $npm init and paste the 
-script commands, dependencies and dev dependencies that you had copied earlier 
-to your new package.json file.
-
-
-NOTE: Dont forget to run $ npm run build to install both dependencies from your node and angular
+https://github.com/KShewengerz/ngx-express-typescript-starter
 ```
 
 
