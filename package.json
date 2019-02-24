@@ -1,6 +1,6 @@
 {
   "name": "ngx-express-typescript-starter",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "An Angular and Node Express Typescript starter",
   "main": "index.js",
   "scripts": {
