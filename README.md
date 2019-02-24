@@ -11,7 +11,7 @@ An Angular and Node Express Typescript Starter Kit
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
 #### NOTE
-##### Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter` as this doesn't support a shell script yet.
+##### Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter` as this doesn't support a shell script yet. Thus, will only end up on your node_modules
 
 
 ```
