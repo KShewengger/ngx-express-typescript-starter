@@ -24,20 +24,23 @@ https://github.com/KShewengerz/ngx-express-typescript-starter
 #### How to run
 
 ````
- $ npm run install:all          - Installs all package.json from express & angular
+ $ npm run install:all    - Installs all package.json from express & angular
  
  $ npm run ng:start       - Runs angular at http://localhost:4200
- $ npm run node:start  - Runs express at http://localhost:3000
+ $ npm run node:start     - Runs express at http://localhost:3000
  $ npm run start          - Runs both angular and express
 ````
 
 #### Incase: Angular Spec Bug
-```
 If you will stumble with this error while running "npm run express:start"
+
+```
 public/app/e2e/src/app.e2e-spec.ts(13,41): error TS2345: Argument of type '"Welcome to app!"' is not assignable to parameter of type 'Expected<Promise<string>>'.
+```
 
-Just modify the /public/app/e2e/src/app.e2e-spec.ts line 13 - 
+Just modify the /public/app/e2e/src/app.e2e-spec.ts line 13 
 
+```
 from : expect(page.getTitleText()).toEqual('Welcome to app!');
 to : expect<any>(page.getTitleText()).toEqual('Welcome to app!');
 
