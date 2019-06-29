@@ -52,6 +52,11 @@ If you want to remove the existing public/app angular directory and generate oth
 2.) Perform ng new or ng generate on public folder
 3.) Update also the Node package.json and rename the "install:all" and "ng:start" scripts changing the old "app" to your newly created angular app (new name) 
 4.) Update root tsconfig.json path, changing the old angular app name to its new name
+5.) Since its a newly generated angular app, just supply this line on your tsconfig.json
+  
+  "paths": {
+     "@app/*": ["src/app/*"]
+   }
 ```
 
 #### Front End and Back End Test
