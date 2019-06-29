@@ -1,17 +1,18 @@
 # ngx-express-typescript-starter
-An Angular and Node Express Typescript Starter Kit
+An Angular 8 and Node Express Typescript Starter Kit
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
 
 #### Main Dev Tools Used
-`Angular 7` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
+`Angular 8` `Angular CLI 8` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 #### Clone the project
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
 #### NOTE
-##### Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter` as this doesn't support a shell script yet. Thus, will only end up on your node_modules
+##### Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter` 
+- As this doesn't support a shell script yet. Thus, will only end up on your node_modules
 
 
 ```
@@ -26,37 +27,46 @@ https://github.com/KShewengerz/ngx-express-typescript-starter
  $ npm run install:all          - Installs all package.json from express & angular
  
  $ npm run ng:start       - Runs angular at http://localhost:4200
- $ npm run express:start  - Runs express at http://localhost:3000
+ $ npm run node:start  - Runs express at http://localhost:3000
  $ npm run start          - Runs both angular and express
 ````
 
-
-#### Rename Angular App
-
+#### Incase: Angular Spec Bug
 ```
-To rename the existing angular app from /public, you need to:
+If you will stumble with this error while running "npm run express:start"
+public/app/e2e/src/app.e2e-spec.ts(13,41): error TS2345: Argument of type '"Welcome to app!"' is not assignable to parameter of type 'Expected<Promise<string>>'.
 
-1.) Rename all 'ng-app' to <your_new_angular_directory_name> on: 
+Just modify the /public/app/e2e/src/app.e2e-spec.ts line 13 - 
 
-    a.) angular.json
-    b.) package.json
-    c.) ReadMe
-    d.) index.html (public/ng-app/src/index.html)
+from : expect(page.getTitleText()).toEqual('Welcome to app!');
+to : expect<any>(page.getTitleText()).toEqual('Welcome to app!');
 
-or
-
-2.) Delete the current ng-app directory at /public and generate a new ng-app with angular cli's 
-
-$ ng new <your_new_angular_app_name>
-
-
-
-NOTE: 
-1.) Update also the Node package.json and rename the "build" and "ng-start" scripts changing the old "ng-app" to your newly created angular app (new name) 
-2.) Update Node Tsconfig path, changing the old angular app name to its new name
-
+Adding type <any>
 ```
 
+#### Change Existing Angular App 
+If you want to remove the existing public/app angular directory and generate other angular app with angular your cli version. These are some notes to consider:
+
+```
+1.) Update the @angular/cli version on the root folder's package.json matching your global version
+2.) Perform ng new or ng generate on public folder
+3.) Update also the Node package.json and rename the "install:all" and "ng:start" scripts changing the old "app" to your newly created angular app (new name) 
+4.) Update root tsconfig.json path, changing the old angular app name to its new name
+```
+
+#### Front End and Back End Test
+
+```
+Front End:
+1.) Run $ npm run ng:start
+2.) Visit http://localhost:4200
+
+Back End:
+1.) Run $ npm run node:start
+2.) Visit http://localhost:3000/user 
+  - endpoint configured when fetching users 
+  - a simple message will appear
+```
 
 #### Babel and tsconfig paths support on Node and Angular
 
