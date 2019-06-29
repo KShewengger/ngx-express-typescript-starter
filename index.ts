@@ -67,6 +67,6 @@ export class Index {
    * Api Routes
    */
   private routes(): void {
-    this.app.use('/user', userRoutes);
+    this.app.use('user', userRoutes);
   }
 }

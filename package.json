@@ -4,10 +4,10 @@
   "description": "An Angular and Node Express Typescript starter",
   "main": "index.js",
   "scripts": {
-    "install:all": "npm install && cd ./public/ng-app && npm install",
-    "ng:start": "cd ./public/ng-app && tsc && npm start",
-    "express:start": "tsc-watch --onSuccess 'nodemon --exec babel-node ./bin/www'",
-    "start": "concurrently \"npm run express-start\"  \"npm run ng-start\""
+    "install:all": "npm install && cd ./public/app && npm install",
+    "ng:start": "cd ./public/app && tsc && npm start",
+    "node:start": "tsc-watch --onSuccess 'nodemon --exec babel-node ./bin/www'",
+    "start": "concurrently \"npm run node:start\"  \"npm run ng:start\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "ts-node": "^6.0.0"
   },
   "devDependencies": {
+    "@angular/cli": "^8.0.6",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/node": "^7.2.2",
