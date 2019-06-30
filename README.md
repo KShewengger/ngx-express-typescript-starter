@@ -11,8 +11,13 @@ An Angular 8 and Node Express Typescript Starter Kit
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
 #### NOTE
-##### 1.) Clone the project DO NOT perform `$ npm install ngx-express-typescript-starter` 
+##### 1.) Clone the project. Do not perform `$ npm install ngx-express-typescript-starter` 
 - As this doesn't support a shell script yet. Thus, will only end up on your node_modules
+
+```
+Github Repo:
+git clone https://github.com/KShewengerz/ngx-express-typescript-starter
+```
 
 ##### 2.) If ever you want to install it via `$ npm`. Consider these things after installing it: 
 
@@ -22,11 +27,6 @@ An Angular 8 and Node Express Typescript Starter Kit
 Or copy the whole directory and separate it from your current directory making the ngx-express-typescript-starter directory as your current root directory.
 4.) Rename the ngx-express-typescript-starter directory to your preferred project name
 5.) Edit your package.json to the actual clean format. Be sure to preserve the script commands, dependencies and devDependencies
-```
-
-```
-Github Repo:
-https://github.com/KShewengerz/ngx-express-typescript-starter
 ```
 
 
