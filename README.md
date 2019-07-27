@@ -4,22 +4,16 @@ An Angular 8 and Node Express Typescript Starter Kit
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
 
-#### Main Dev Tools Used
+#### 1. Main Dev Tools Used
 `Angular 8` `Angular CLI 8` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
-#### Clone the project
+#### 2. Clone the project
+- As this doesn't support a shell script yet. Thus, will only end up on your node_modules
+- Do not perform `$ npm install ngx-express-typescript-starter` 
+
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
-#### NOTE
-##### 1.) Clone the project. Do not perform `$ npm install ngx-express-typescript-starter` 
-- As this doesn't support a shell script yet. Thus, will only end up on your node_modules
-
-```
-Github Repo:
-git clone https://github.com/KShewengerz/ngx-express-typescript-starter
-```
-
-##### 2.) If ever you want to install it via `$ npm`. Consider these things after installing it: 
+#### 3.) Installing it via `$ npm`. Consider these things after installing it: 
 
 ```
 1.) Copy the ngx-express-typescript-starter directory from your node_modules
@@ -29,8 +23,16 @@ Or copy the whole directory and separate it from your current directory making t
 5.) Edit your package.json to the actual clean format. Be sure to preserve the script commands, dependencies and devDependencies
 ```
 
+#### 4. Upgrade your version to Angular 8 
+#####`if ever you decide to remove the current angular project directory`
 
-#### How to run
+```
+Referenced my answer: 
+https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
+```
+
+
+#### 5. How to run
 
 ````
  $ npm run install:all    - Installs all package.json from express & angular
@@ -40,7 +42,7 @@ Or copy the whole directory and separate it from your current directory making t
  $ npm run start          - Runs both angular and express
 ````
 
-#### Incase: Angular Spec Bug
+#### 6. Incase: Angular Spec Bug
 If you will stumble with this error while running "npm run express:start"
 
 ```
@@ -56,7 +58,7 @@ to : expect<any>(page.getTitleText()).toEqual('Welcome to app!');
 Adding type <any>
 ```
 
-#### Change Existing Angular App 
+#### 7. Change Existing Angular App 
 If you want to remove the existing public/app angular directory and generate other angular app with angular your cli version. These are some notes to consider:
 
 ```
@@ -71,7 +73,7 @@ If you want to remove the existing public/app angular directory and generate oth
    }
 ```
 
-#### Front End and Back End Test
+#### 8. Front End and Back End Test
 
 ```
 Front End:
@@ -85,7 +87,7 @@ Back End:
   - a simple message will appear
 ```
 
-#### Babel and tsconfig paths support on Node and Angular
+#### 9. Babel and tsconfig paths support on Node and Angular
 
 ```
 AVOID:
