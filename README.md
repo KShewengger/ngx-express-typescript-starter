@@ -24,10 +24,10 @@ Or copy the whole directory and separate it from your current directory making t
 ```
 
 #### 4. Upgrade your version to Angular 8 
-#####`if ever you decide to remove the current angular project directory`
+`If ever you decide to remove the current angular project directory`
 
 ```
-Referenced my answer: 
+Follow this steps from the referenced link: 
 https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
 ```
 
