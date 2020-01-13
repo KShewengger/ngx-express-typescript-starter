@@ -6,7 +6,7 @@
   "scripts": {
     "install:all": "npm install && cd ./public/app && npm install",
     "ng:start": "cd ./public/app && tsc && npm start",
-    "node:start": "tsc-watch --onSuccess 'nodemon --exec babel-node ./bin/www'",
+    "node:start": "tsc && nodemon --exec babel-node ./bin/www",
     "start": "concurrently \"npm run node:start\"  \"npm run ng:start\""
   },
   "repository": {
