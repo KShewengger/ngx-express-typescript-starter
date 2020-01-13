@@ -61,7 +61,7 @@
     "nodemon": "^1.19.1",
     "tsc-watch": "^1.1.39",
     "tslint": "^5.18.0",
-    "typescript": "^3.5.3",
+    "typescript": "~3.5.3",
     "typescript-register": "^1.1.0"
   }
 }
