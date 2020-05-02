@@ -8,10 +8,10 @@ An Angular 9 and Node Express Typescript Starter Kit
 `Angular 9` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 #### 2. Clone the project
-- As this doesn't support a shell script yet. Thus, will only end up on your node_modules
+- As this does not support a shell script yet. Thus, will only end up on your node_modules
 - Do not perform `$ npm install ngx-express-typescript-starter` instead do this:
 
-` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
+` $ git clone https://github.com/KShewengger/ngx-express-typescript-starter`
 
 #### 3. How to run
 
@@ -20,6 +20,7 @@ An Angular 9 and Node Express Typescript Starter Kit
  
  $ npm run ng:start       - Runs angular at http://localhost:4200
  $ npm run node:start     - Runs express at http://localhost:3000
+                          - To test the current running route visit http://localhost:3000/user
  $ npm start              - Runs both angular and express
 ````
 
