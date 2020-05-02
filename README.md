@@ -1,15 +1,15 @@
 # ngx-express-typescript-starter
-An Angular 8 and Node Express Typescript Starter Kit
+An Angular 9 and Node Express Typescript Starter Kit
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
 
 #### 1. Main Dev Tools Used
-`Angular 8` `Angular CLI 8` `Node` `Express` `Typescript` `ES6` `Babel 7`
+`Angular 9` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 #### 2. Clone the project
 - As this doesn't support a shell script yet. Thus, will only end up on your node_modules
-- Do not perform `$ npm install ngx-express-typescript-starter` 
+- Do not perform `$ npm install ngx-express-typescript-starter` instead do this:
 
 ` $ git clone https://github.com/KShewengerz/ngx-express-typescript-starter`
 
@@ -26,11 +26,6 @@ An Angular 8 and Node Express Typescript Starter Kit
 #### 4. Babel and tsconfig paths support on Node and Angular
 
 ```
-AVOID:
-On node    : import {} from '../../shared/enums/tables/user'
-On angular : import {} from './app.component'
-
-INSTEAD USE:
 import {} from '@app/enums';
 import {} from '@app/app.component'   or '@app/user/user.component'
 
@@ -42,5 +37,8 @@ and Angular (./public/ng-app/tsconfig.json)
 - If you want to customized and support some directories, you can do so 
 by updating both the .babelrc and tsconfig.json of express or angular
 ```
- 
+ #### NOTE:
+```
+Be sure your NodeJS is version 12.x.x 
+```
 
