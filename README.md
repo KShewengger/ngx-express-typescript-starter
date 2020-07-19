@@ -54,9 +54,9 @@ by updating both the .babelrc and tsconfig.json of express or angular
 ```
 - Be sure your NodeJS is version 12.x.x 
 - If you need help in regards to the Angular Upgrade, you can follow these instructions:
+https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
+
 - The "warning in" empty messages are currently being resolved right now on Angular CLI team,
 please stay up to date on this thread: https://github.com/angular/angular-cli/issues/18231
-
-https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
 ```
 
