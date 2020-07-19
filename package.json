@@ -6,8 +6,10 @@
   "scripts": {
     "install:all": "npm install && cd ./public/app && npm install",
     "ng:start": "cd ./public/app && tsc && npm start",
+    "ng:build:prod": "cd ./public/app && tsc && npm run build:prod",
     "node:start": "tsc && nodemon --exec babel-node ./bin/www",
-    "start": "concurrently \"npm run node:start\"  \"npm run ng:start\""
+    "start": "concurrently \"npm run node:start\"  \"npm run ng:start\"",
+    "app:build:run": "npm run ng:build:prod && npm run node:start"
   },
   "repository": {
     "type": "git",

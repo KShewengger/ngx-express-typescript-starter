@@ -6,6 +6,7 @@ import * as logger from 'morgan';
 import * as path from 'path';
 import * as favicon from 'serve-favicon';
 import * as cors from 'cors';
+import * as fs from 'fs';
 
 import { userRoutes } from '@app/controllers';
 
@@ -68,5 +69,21 @@ export class Index {
    */
   private routes(): void {
     this.app.use('/user', userRoutes);
+
+    this.app.get('*', this.htmlHandler);
   }
+
+  /**
+   * HTML Handler
+   */
+  private async htmlHandler(req: Request, res:  Response, next: NextFunction): Promise<void> {
+    const root = path.join(__dirname, '../public/app/dist/', 'app');
+
+    fs.stat(root + req.path, err => {
+      err
+        ? res.sendFile('index.html', { root })
+        : res.sendFile(req.path, { root });
+    });
+  }
+
 }
