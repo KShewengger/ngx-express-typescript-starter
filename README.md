@@ -1,5 +1,5 @@
 # ngx-express-typescript-starter
-An Angular 9 and Node Express Typescript Starter Kit
+An Angular 10 and Node Express Typescript Starter Kit
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
@@ -54,6 +54,8 @@ by updating both the .babelrc and tsconfig.json of express or angular
 ```
 - Be sure your NodeJS is version 12.x.x 
 - If you need help in regards to the Angular Upgrade, you can follow these instructions:
+- The "warning in" empty messages are currently being resolved right now on Angular CLI team,
+please stay up to date on this thread: https://github.com/angular/angular-cli/issues/18231
 
 https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
 ```
