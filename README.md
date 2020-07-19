@@ -3,9 +3,8 @@ An Angular 9 and Node Express Typescript Starter Kit
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
-
 #### 1. Main Dev Tools Used
-`Angular 9` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
+`Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 #### 2. Clone the project
 - As this does not support a shell script yet. Thus, will only end up on your node_modules
@@ -15,13 +14,26 @@ An Angular 9 and Node Express Typescript Starter Kit
 
 #### 3. How to run
 
+> 1.) Install Dependencies
 ````
  $ npm run install:all    - Installs all package.json from express & angular
- 
+````
+
+> 2.) Run your app (You can choose any of these options)
+```
  $ npm run ng:start       - Runs angular at http://localhost:4200
+
  $ npm run node:start     - Runs express at http://localhost:3000
                           - To test the current running route visit http://localhost:3000/user
+ 
  $ npm start              - Runs both angular and express
+
+ $ npm run app:build:run  - Builds your angular app using production build 
+                          - Runs your node server serving the generated angular 
+                          dist directory at the same port 3000
+                          - Now both Node & Angular are running on the same port 
+                          and can accessed with http://localhost:3000
+
 ````
 
 #### 4. Babel and tsconfig paths support on Node and Angular
