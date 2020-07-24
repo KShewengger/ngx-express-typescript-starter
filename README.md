@@ -26,7 +26,9 @@ An Angular 10 and Node Express Typescript Starter Kit
  $ npm run node:start     - Runs express at http://localhost:3000
                           - To test the current running route visit http://localhost:3000/user
  
- $ npm start              - Runs both angular and express
+ $ npm start              - Runs both angular (http://localhost:4200) and 
+                          express (http://localhost:3000/user -- current active api endpoint)
+        
 
  $ npm run app:build:run  - Builds your angular app using production build 
                           - Runs your node server serving the generated angular 
