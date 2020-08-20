@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install:all": "npm install && cd ./public/app && npm install",
+    "clear:all": "rm -rf node_modules && cd ./public/app && rm -rf node_modules",
     "ng:start": "cd ./public/app && tsc && npm start",
     "ng:build:prod": "cd ./public/app && tsc && npm run build:prod",
     "node:start": "tsc && nodemon --exec babel-node ./bin/www",

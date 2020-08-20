@@ -1,5 +1,5 @@
 # ngx-express-typescript-starter
-An Angular 10 and Node Express Typescript Starter Kit
+An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & Configuration Setup
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
@@ -17,6 +17,8 @@ An Angular 10 and Node Express Typescript Starter Kit
 > 1.) Install Dependencies
 ````
  $ npm run install:all    - Installs all package.json from express & angular
+
+ $ npm run clear:all      - Remove all node_modules on backend and frontend
 ````
 
 > 2.) Run your app (You can choose any of these options)
@@ -61,5 +63,8 @@ https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
 
 - The "warning in" empty messages are currently being resolved right now on Angular CLI team,
 please stay up to date on this thread: https://github.com/angular/angular-cli/issues/18231
+
+- If you want to stick with CSS, just leave the schematics property to empty object in angular.json
+schematics: {} and remove the stylePreprocessorOptions property
 ```
 
