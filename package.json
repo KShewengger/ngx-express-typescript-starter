@@ -8,9 +8,11 @@
     "clear:all": "rm -rf node_modules && cd ./public/app && rm -rf node_modules",
     "ng:start": "cd ./public/app && tsc && npm start",
     "ng:build:prod": "cd ./public/app && tsc && npm run build:prod",
+    "babel:node": "babel-node ./bin/www",
     "node:start": "tsc && nodemon --exec babel-node ./bin/www",
-    "start": "concurrently \"npm run node:start\"  \"npm run ng:start\"",
-    "app:build:run": "npm run ng:build:prod && npm run node:start"
+    "node:start:prod": "tsc && pm2 start npm -- run babel:node",
+    "start:dev": "concurrently \"npm run node:start\"  \"npm run ng:start\"",
+    "start:prod": "npm run ng:build:prod && npm run node:start:prod"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,11 @@
   },
   "keywords": [
     "angular",
+    "angular cli",
     "typescript",
     "express",
     "babel",
-    "express typescript",
-    "angular express"
+    "pm2"
   ],
   "author": "Kristy Mae Almuete <kristyalmuete@gmail.com>",
   "license": "MIT",
@@ -40,6 +42,7 @@
     "debug": "~2.6.3",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "pm2": "^4.4.1",
     "serve-favicon": "~2.4.2",
     "ts-node": "~8.6.2"
   },

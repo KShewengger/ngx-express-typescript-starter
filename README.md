@@ -28,16 +28,16 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
  $ npm run node:start     - Runs express at http://localhost:3000
                           - To test the current running route visit http://localhost:3000/user
  
- $ npm start              - Runs both angular (http://localhost:4200) and 
+ $ npm run start:dev      - Runs both angular (http://localhost:4200) and 
                           express (http://localhost:3000/user -- current active api endpoint)
         
 
- $ npm run app:build:run  - Builds your angular app using production build 
+ $ npm run start:prod     - Builds your angular app using production build 
                           - Runs your node server serving the generated angular 
                           dist directory at the same port 3000
                           - Now both Node & Angular are running on the same port 
                           and can accessed with http://localhost:3000
-
+                          - We use pm2 for this as pm2 is best served in production
 ````
 
 #### 4. Babel and tsconfig paths support on Node and Angular
