@@ -6,7 +6,7 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 #### 1. Main Dev Tools Used
 `Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
-#### 2. Fork the project
+#### 2. Clone or Fork the repository
 **[Github Repository](https://github.com/KShewengger/ngx-express-typescript-starter)**
 
 - As this does not support a shell script yet. Thus, will only end up on your node_modules
