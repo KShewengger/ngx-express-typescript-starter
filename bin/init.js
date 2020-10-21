@@ -3,6 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 const mkdirp = require('mkdirp');
 const ncp = require('ncp').ncp;
+const prettier = require("prettier");
 
 const sourcePath = path.join(__dirname, '..', 'source');
 
@@ -22,7 +23,7 @@ async function init(appName, useCurrentDirectory) {
  */
 function updateContents(name) {
   const data = JSON.parse(fs.readFileSync(`${sourcePath}/package.json`, 'utf-8'));
-  const update = JSON.stringify({...data, name });
+  const update = prettier.format(JSON.stringify({...data, name }), { parser: 'json' });
 
   fs.writeFileSync(`${sourcePath}/package.json`, update);
   fs.writeFileSync(`${sourcePath}/README.md`, `# ${name}`);
