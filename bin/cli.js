@@ -12,14 +12,10 @@ yargs.command({
     appName: {
       describe: `App's Name`,
       type: 'string',
-      demandOption: true
-    },
-    useCurrentDir: {
-      describe: 'Use current directory as the base directory',
-      default: false
+      default: ''
     }
   },
-  handler: async ({ appName, useCurrentDir }) => await init(appName, useCurrentDir)
+  handler: async ({ appName }) => await init(appName)
 });
 
 

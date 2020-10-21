@@ -5,16 +5,21 @@ const mkdirp = require('mkdirp');
 const ncp = require('ncp').ncp;
 const prettier = require("prettier");
 
+const currentDirectoryName = path.basename(path.resolve());
 const sourcePath = path.join(__dirname, '..', 'source');
 
 
 /**
  * Initialize Generation of Directories and Files
  */
-async function init(appName, useCurrentDirectory) {
+async function init(appName) {
+  const useCurrentDirectory = appName === '';
+  appName = appName ? appName : currentDirectoryName;
+
   console.log(chalk.bgYellow.whiteBright(`Generating App "${appName}..."`));
 
   updateContents(appName);
+
   await generateDirectoryFiles(appName, useCurrentDirectory);
 }
 
