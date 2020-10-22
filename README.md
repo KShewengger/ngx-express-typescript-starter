@@ -31,6 +31,7 @@ $ ngx-express generate <OPTIONS>                // Add options as specified belo
 | `--appName`      | string       | *Current Directory Name* | Generate a folder using your app's name & also generate it's corresponding folders & files
 | `--installDeps`  | boolean     | true                     | Installs backend and frontend dependencies
 
+**Advice**
 > It's best if you could set your `installDeps` as **false** and solely install them by
 > running `$ npm run install:all` after the app has been generated. 
 >
