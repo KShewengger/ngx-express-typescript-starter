@@ -52,10 +52,10 @@ function updateContents(name) {
   const update = prettier.format(JSON.stringify({...data, name }), { parser: 'json' });
 
   fs.writeFileSync(`${sourcePath}/package.json`, update);
-  console.log(chalk.green('✔'), 'UPDATE package.json');
+  console.log(chalk.green('✔'), `${chalk.green('UPDATE')} package.json`);
 
   fs.writeFileSync(`${sourcePath}/README.md`, `# ${name}`);
-  console.log(chalk.green('✔'), 'UPDATE README.md');
+  console.log(chalk.green('✔'), `${chalk.green('UPDATE')} README.md`);
 }
 
 
@@ -68,7 +68,7 @@ function updateContents(name) {
  * @returns {Promise<void>}
  */
 async function copyDirectoryFiles(appName, useCurrentDirectory, appDirectory) {
-  const status = spinner('SETUP Backend and Frontend Architecture').start();
+  const status = spinner(`${chalk.green('SETUP')} Backend and Frontend Architecture`).start();
 
   if (useCurrentDirectory) await copyFiles(appDirectory);
   else {
@@ -76,7 +76,7 @@ async function copyDirectoryFiles(appName, useCurrentDirectory, appDirectory) {
     await copyFiles(appDirectory);
   }
 
-  status.succeed(`SETUP Backend and Frontend Architecture`)
+  status.succeed(`${chalk.green('SETUP')} Backend and Frontend Architecture`)
 }
 
 
@@ -104,7 +104,7 @@ async function installDependencies(type, appDirectory) {
 
   return await execPromise(`cd ${appDirectory} && ${cmd}`)
     .then(
-      () => status.succeed(`INSTALLED ${type} dependencies`),
+      () => status.succeed(`${chalk.green('INSTALLED')} ${type} dependencies`),
       err => errorHandler(err)
     );
 }
@@ -118,7 +118,7 @@ async function initializeGit(appName, useCurrentDirectory) {
 
   await execPromise(`cd ${location} && git init`, { silent: true, async: true })
     .then(
-      () => console.log(chalk.green('✔'), 'INITIALIZED Git'),
+      () => console.log(chalk.green('✔'), `${chalk.green('INITIALIZED')} Git`),
       err => errorHandler(err)
     );
 }

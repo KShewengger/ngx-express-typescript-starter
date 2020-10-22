@@ -16,6 +16,7 @@ yargs.command({
     },
     installDeps: {
       describe: 'Install dependencies on both frontend and backend',
+      type: 'boolean',
       default: true
     }
   },
