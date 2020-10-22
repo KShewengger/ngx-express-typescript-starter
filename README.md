@@ -59,8 +59,7 @@ ________________________________________________________________________________
 
 $ ngx-express generate --appName="<YOUR_APP_NAME>" --installDeps=false      // Generate using your directory's name and 
                                                                             // will not install any frontend and backend 
-                                                                            // dependencies. You must run $ npm run 
-                                                                            // install:all after the app has been 
+                                                                            // dependencies. 
 
 $ cd <YOUR_APP_NAME>                                        // Go to your project directory that was generated
 
@@ -69,7 +68,7 @@ $ npm run install:all                                       // Install frontend 
 
 ## How to run
 
-Run your app (You can choose any of these options)
+Run your app *(You can choose any of these commands)*
 ```
  $ npm run ng:start       - Runs angular at http://localhost:4200
                           - Run on separate terminal
@@ -80,12 +79,12 @@ Run your app (You can choose any of these options)
  
  $ npm run start:dev      - Runs both angular (http://localhost:4200) and express (http://localhost:3000)
                           - You can access your API endpoints with http://localhost:3000/<route_name>
-                          - You can test http://localhost:3000/users as this was by default set
+                          - You can test http://localhost:3000/users as this was set by default
                           - But note that http://localhost:3000 is reserved and will be serving your angular dist folder 
                           when you perform ng build.   
                           - Node is served using Nodemon for development
                           - Since this uses nodemon every change it detects and re-run, it's best to run the node &
-                          angular separately, provided 1st 2 commands above
+                          angular separately, refer to the prior 1st 2 commands above
         
  $ npm run start:prod     - Builds your angular app using production build 
                           - Runs your node server serving the generated angular dist directory at the same port 3000
