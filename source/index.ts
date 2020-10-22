@@ -8,7 +8,7 @@ import * as favicon from 'serve-favicon';
 import * as cors from 'cors';
 import * as fs from 'fs';
 
-import { userRoutes } from '@app/controllers';
+import { usersRoutes } from '@app/controllers';
 
 
 export class Index {
@@ -68,7 +68,7 @@ export class Index {
    * Api Routes
    */
   private routes(): void {
-    this.app.use('/user', userRoutes);
+    this.app.use('/users', usersRoutes);
 
     this.app.get('*', this.htmlHandler);
   }

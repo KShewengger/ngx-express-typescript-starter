@@ -1,2 +1,2 @@
-export * from './user/user.api';
-export * from './user/user.route';
+export * from './users/users.api';
+export * from './users/users.route';

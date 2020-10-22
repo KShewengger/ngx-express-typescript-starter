@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import * as api from "./user.api";
+import * as api from "./users.api";
 
 const router: Router = Router();
 
@@ -38,4 +38,4 @@ router.get("/:id", api.getUser);
 router.delete("/:id", api.deleteUser);
 
 
-export const userRoutes: Router = router;
+export const usersRoutes: Router = router;

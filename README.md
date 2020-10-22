@@ -41,20 +41,24 @@ $ ngx-express generate <OPTIONS>                // Add options as specified belo
 ```
 $ ngx-express generate                                      // Generate folders & files inside your current 
                                                             // working directory
+______________________________________________________________________________________________________________
 
 $ ngx-express generate --installDeps=false                  // Generate using your directory's name and will not install 
                                                             // any frontend and backend dependencies
-                                                            // You must run $ npm run install:all after the app has been 
-                                                            // generated
+$ npm run install:all                                       // install frontend and backend dependencies
+______________________________________________________________________________________________________________
 
 $ ngx-express generate --appName="<YOUR_APP_NAME>"          // Generate using your app's name and install frontend
                                                             // and backend dependencies
+
+______________________________________________________________________________________________________________
 
 $ ngx-express generate --appName="<YOUR_APP_NAME>" -installDeps=false       // Generate using your directory's name and 
                                                                             // will not install any frontend and backend 
                                                                             // dependencies. You must run $ npm run 
                                                                             // install:all after the app has been 
-                                                                            // generated
+$ cd <YOUR_APP_NAME>                                        // Go to your project directory that was generated
+$ npm run install:all                                       // install frontend and backend dependencies
 ```
 
 ## How to run
@@ -67,7 +71,8 @@ Run your app (You can choose any of these options)
                           - To test the current running route visit http://localhost:3000/user
  
  $ npm run start:dev      - Runs both angular (http://localhost:4200) and express (http://localhost:3000)
-                          - You can access your API endpoints with http://localhost:3000/<api_name>
+                          - You can access your API endpoints with http://localhost:3000/<route_name>
+                          - You can test http://localhost:3000/users as this was by default set
                           - But note that http://localhost:3000 is reserved and will be serving your angular 
                           dist folder when you perform ng build.   
                           - Node is served using Nodemon for development
