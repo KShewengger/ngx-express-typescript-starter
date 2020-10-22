@@ -3,69 +3,86 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
-#### 1. Main Dev Tools Used
+#### Main Dev Tools Used
 `Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
-#### 2. Clone or Fork the repository
-**[Github Repository](https://github.com/KShewengger/ngx-express-typescript-starter)**
+#### Prerequisites (global)
 
-- As this does not support a shell script yet. Thus, will only end up on your node_modules
-- Avoid `$ npm install ngx-express-typescript-starter`
+| Package  | Version |
+| ------------- | ------------- |
+| Node  | \>=12.0.0  |
+| Git  | any  |
+
+#### Installation (-g) 
+
+`$ npm install -g ngx-express-typescript-starter`
+
+#### Options
+
+```
+$ ngx-express generate                          // Generate the files directly in your existing folder using
+                                                // your current folder's name as your app's name and updating it's
+                                                // package.json's name
+
+$ ngx-express --appName="<YOUR_APP_NAME>"       // Generate a folder using your app's name and generate it's
+                                                // corresponding files and updating it's package.json's name
+```
 
 
-#### 3. How to run
 
-> 1.) Install Dependencies
-````
- $ npm run install:all    - Installs all package.json from express & angular
+#### How to run
 
- $ npm run clear:all      - Remove all node_modules on backend and frontend
-````
-
-> 2.) Run your app (You can choose any of these options)
+Run your app (You can choose any of these options)
 ```
  $ npm run ng:start       - Runs angular at http://localhost:4200
 
  $ npm run node:start     - Runs express at http://localhost:3000
                           - To test the current running route visit http://localhost:3000/user
  
- $ npm run start:dev      - Runs both angular (http://localhost:4200) and 
-                          express (http://localhost:3000/user -- current active api endpoint)
+ $ npm run start:dev      - Runs both angular (http://localhost:4200) and express (http://localhost:3000)
+                          - You can access your API endpoints with http://localhost:3000/<api_name>
+                          - But note that http://localhost:3000 is reserved and will be serving your angular 
+                          dist folder when you perform ng build.   
+                          - Node is served using Nodemon for development
         
-
  $ npm run start:prod     - Builds your angular app using production build 
                           - Runs your node server serving the generated angular 
                           dist directory at the same port 3000
                           - Now both Node & Angular are running on the same port 
                           and can accessed with http://localhost:3000
-                          - We use pm2 for this as pm2 is best served in production
+                          - Node is served using PM2 for production
 ````
 
-#### 4. Babel and tsconfig paths support on Node and Angular
+#### SCSS Import Support (Angular)
+```
+// In reference to the SCSS architecture set on your /public/app/src/assets/styles
+// If you want to access any of those files in your angular components' scss files, you can do so by specifying the
+// code block below
 
+@import '@base/colors';                // If you want to access the color variables
+
+.header {
+   color: $teal-100;                   // You can set whatever value you have supplied in your 
+                                       // /public/app/src/assets/styles/base/colors.scss
+}
+```
+
+
+#### Babel and tsconfig paths support on Node and Angular
+
+**Implementation**
 ```
 import {} from '@app/enums';
-import {} from '@app/app.component'   or '@app/user/user.component'
-
-
-NOTE:
-- These are set on the respective tsconfig.json on your Node (./tsconfig.json) 
-and Angular (./public/ng-app/tsconfig.json)
-
-- If you want to customized and support some directories, you can do so 
-by updating both the .babelrc and tsconfig.json of express or angular
+import {} from '@app/app.component' or '@app/user/user.component'
 ```
- #### NOTE:
-```
-- Be sure your NodeJS is version 12.x.x 
 
-- If you need help in regards to the Angular Upgrade, you can follow these instructions:
-https://github.com/angular/angular-cli/issues/14546#issuecomment-499908273
+**NOTE**
+- These are set on your respective tsconfig.json on your Node (./tsconfig.json) 
+and Angular (./public/app/tsconfig.json)
 
-- The "warning in" empty messages are currently being resolved right now on Angular CLI team,
-please stay up to date on this thread: https://github.com/angular/angular-cli/issues/18231
+- If you want to customized and support some directories with their corresponding paths, you can edit your `tsconfig.json` **paths** property
 
-- If you want to stick with CSS, just leave the schematics property to empty object in angular.json
-schematics: {} and remove the stylePreprocessorOptions property
-```
+- Angular: Whatever paths you have set in your angular's `tsconfig.json` be sure to also add it in your node's `tsconfig.json` with `./public/app` prefix in it
+
+- Node: Whatever paths you have set in your node's `tsconfig.json` be sure to also add it in your `.babelrc` with `./dist` prefix in it.
 
