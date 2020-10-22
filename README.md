@@ -7,12 +7,13 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 `Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 ## Prerequisites (global)
+Be sure to install these packages on your global and readily accessible in your terminal
 
 | Package        | Version | Installation
 | ------------- | ------------- | ------------- |
 | Node         | \>=12.x.x     |
-| PM2         | any           |  `$ npm install -g pm2`
-| Git        | \>=4.x.x           |
+| PM2         | \>=4.x.x      |  `$ npm install -g pm2`
+| Git        | any           |
 
 ## Installation (-g) 
 
