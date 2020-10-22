@@ -40,13 +40,16 @@ $ ngx-express generate <OPTIONS>                // Add options as specified belo
 
 **Implementation (You can choose any of these commands)**
 ```
-$ ngx-express generate                                      // Generate folders & files inside your current 
-                                                            // working directory
+$ ngx-express generate                                      // Generate folders & files inside your current working 
+                                                            // directory and install frontend & backend dependencies
+
 ________________________________________________________________________________________________________________________
 
 $ ngx-express generate --installDeps=false                  // Generate using your directory's name and will not install 
                                                             // any frontend and backend dependencies
+
 $ npm run install:all                                       // Install frontend and backend dependencies
+
 ________________________________________________________________________________________________________________________
 
 $ ngx-express generate --appName="<YOUR_APP_NAME>"          // Generate using your app's name and install frontend
@@ -54,11 +57,13 @@ $ ngx-express generate --appName="<YOUR_APP_NAME>"          // Generate using yo
 
 ________________________________________________________________________________________________________________________
 
-$ ngx-express generate --appName="<YOUR_APP_NAME>" -installDeps=false       // Generate using your directory's name and 
+$ ngx-express generate --appName="<YOUR_APP_NAME>" --installDeps=false      // Generate using your directory's name and 
                                                                             // will not install any frontend and backend 
                                                                             // dependencies. You must run $ npm run 
                                                                             // install:all after the app has been 
+
 $ cd <YOUR_APP_NAME>                                        // Go to your project directory that was generated
+
 $ npm run install:all                                       // Install frontend and backend dependencies
 ```
 
