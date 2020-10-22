@@ -8,10 +8,11 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 
 ## Prerequisites (global)
 
-| Package  | Version |
-| ------------- | ------------- |
-| Node  | \>=12.0.0  |
-| Git  | any  |
+| Package        | Version | Installation
+| ------------- | ------------- | ------------- |
+| Node         | \>=12.x.x     |
+| PM2         | any           |  `$ npm install -g pm2`
+| Git        | \>=4.x.x           |
 
 ## Installation (-g) 
 
@@ -31,7 +32,7 @@ $ ngx-express generate <OPTIONS>                // Add options as specified belo
 | `--appName`      | string       | *Current Directory Name* | Generate a folder using your app's name & also generate it's corresponding folders & files
 | `--installDeps`  | boolean     | true                     | Installs backend and frontend dependencies
 
-**Advice**
+**Preferrable**
 > It's best if you could set your `installDeps` as **false** and solely install them by
 > running `$ npm run install:all` after the app has been generated. 
 >
@@ -66,22 +67,24 @@ $ npm run install:all                                       // Install frontend 
 Run your app (You can choose any of these options)
 ```
  $ npm run ng:start       - Runs angular at http://localhost:4200
+                          - Run on separate terminal
 
  $ npm run node:start     - Runs express at http://localhost:3000
-                          - To test the current running route visit http://localhost:3000/user
+                          - To test the current running route visit http://localhost:3000/users
+                          - Run on separate terminal
  
  $ npm run start:dev      - Runs both angular (http://localhost:4200) and express (http://localhost:3000)
                           - You can access your API endpoints with http://localhost:3000/<route_name>
                           - You can test http://localhost:3000/users as this was by default set
-                          - But note that http://localhost:3000 is reserved and will be serving your angular 
-                          dist folder when you perform ng build.   
+                          - But note that http://localhost:3000 is reserved and will be serving your angular dist folder 
+                          when you perform ng build.   
                           - Node is served using Nodemon for development
+                          - Since this uses nodemon every change it detects and re-run, it's best to run the node &
+                          angular separately, provided 1st 2 commands above
         
  $ npm run start:prod     - Builds your angular app using production build 
-                          - Runs your node server serving the generated angular 
-                          dist directory at the same port 3000
-                          - Now both Node & Angular are running on the same port 
-                          and can accessed with http://localhost:3000
+                          - Runs your node server serving the generated angular dist directory at the same port 3000
+                          - Now both Node & Angular are running on the same port & can accessed w/ http://localhost:3000
                           - Node is served using PM2 for production
 ````
 
