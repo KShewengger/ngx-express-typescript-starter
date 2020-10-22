@@ -3,34 +3,42 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
-#### Main Dev Tools Used
+### Main Dev Tools Used
 `Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
-#### Prerequisites (global)
+### Prerequisites (global)
 
 | Package  | Version |
 | ------------- | ------------- |
 | Node  | \>=12.0.0  |
 | Git  | any  |
 
-#### Installation (-g) 
+### Installation (-g) 
 
 `$ npm install -g ngx-express-typescript-starter`
 
-#### Options
-
+### Setup
+**Syntax**
 ```
-$ ngx-express generate                          // Generate the files directly in your existing folder using
-                                                // your current folder's name as your app's name and updating it's
-                                                // package.json's name
+$ ngx-express generate                          // Generate folders & files inside your current 
+                                                // working directory
 
-$ ngx-express --appName="<YOUR_APP_NAME>"       // Generate a folder using your app's name and generate it's
-                                                // corresponding files and updating it's package.json's name
+$ ngx-express generate <OPTIONS>                // Add options as specified below
 ```
 
+**Options**
 
+| Option           | Type           | Default                  | Description
+| ---------------- | ------------- | ------------------------ | ------------- |
+| `--appName`      | string       | *Current Directory Name* | Generate a folder using your app's name & also generate it's corresponding folders & files
+| `--installDeps`  | boolean     | true                     | Installs backend and frontend dependencies
 
-#### How to run
+> It's best if you could set your `installDeps` as **false** and solely install them by
+> running `$ npm run install:all` after the app has been generated. 
+>
+>  This is due to some dependencies that take time to load.
+
+### How to run
 
 Run your app (You can choose any of these options)
 ```
@@ -53,7 +61,7 @@ Run your app (You can choose any of these options)
                           - Node is served using PM2 for production
 ````
 
-#### SCSS Import Support (Angular)
+### SCSS Import Support (Angular)
 ```
 // In reference to the SCSS architecture set on your /public/app/src/assets/styles
 // If you want to access any of those files in your angular components' scss files, you can do so by specifying the
@@ -68,7 +76,7 @@ Run your app (You can choose any of these options)
 ```
 
 
-#### Babel and tsconfig paths support on Node and Angular
+### Babel and tsconfig paths support on Node and Angular
 
 **Implementation**
 ```

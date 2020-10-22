@@ -13,9 +13,13 @@ yargs.command({
       describe: `App's Name`,
       type: 'string',
       default: ''
+    },
+    installDeps: {
+      describe: 'Install dependencies on both frontend and backend',
+      default: true
     }
   },
-  handler: async ({ appName }) => await init(appName)
+  handler: async ({ appName, installDeps }) => await init(appName, installDeps)
 });
 
 

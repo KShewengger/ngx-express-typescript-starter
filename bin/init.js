@@ -18,7 +18,7 @@ const sourcePath = path.join(__dirname, '..', 'source');
 /**
  * Initialize Generation of Directories and Files
  */
-async function init(appName) {
+async function init(appName, installDeps) {
   const useCurrentDirectory = appName === '';
   const appDirectory = useCurrentDirectory ? './' : await path.resolve(appName);
 
@@ -30,15 +30,17 @@ async function init(appName) {
 
   try {
     await copyDirectoryFiles(appName, useCurrentDirectory, appDirectory);
-    await installDependencies('backend', appDirectory);
-    await installDependencies('frontend', appDirectory);
     await initializeGit(appName, useCurrentDirectory);
+
+    if (installDeps) {
+      await installDependencies('backend', appDirectory);
+      await installDependencies('frontend', appDirectory);
+    }
 
     done(appName);
   } catch(err) {
     errorHandler(err);
   }
-
 }
 
 
