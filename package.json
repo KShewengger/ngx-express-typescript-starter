@@ -12,7 +12,9 @@
     "typescript",
     "express",
     "babel",
-    "pm2"
+    "pm2",
+    "nodemon",
+    "scss"
   ],
   "author": "Kristy Mae Almuete <kristyalmuete@gmail.com>",
   "license": "MIT",

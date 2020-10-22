@@ -17,7 +17,12 @@ Be sure to install these packages on your global and readily accessible in your 
 
 ## Installation (-g) 
 
-`$ npm install -g ngx-express-typescript-starter`
+```
+$ npm install -g ngx-express-typescript-starter
+```
+
+*In case if you have encountered a problem with global installation regarding `EACCESS` in your Linux distro, you can 
+try and apply this solution from **[StackOverflow](https://stackoverflow.com/questions/25290986/how-to-fix-eacces-issues-with-npm-install/29787931)***
 
 ## Setup
 
@@ -34,37 +39,40 @@ $ ngx-express generate <OPTIONS>                // Add options as specified belo
 | `--installDeps`  | boolean     | true                     | Installs backend and frontend dependencies
 
 **Preferrable**
-> It's best if you could set your `installDeps` as **false** and solely install them by
+> It's best if you could set your `installDeps` to **false** and solely install them by
 > running `$ npm run install:all` after the app has been generated. 
 >
 >  This is due to some dependencies that take time to load.
 
-**Implementation (You can choose any of these commands)**
+## Implementation
+*You can choose any of these commands below:*
+
+
+**Method #1 -** Generate folders & files inside your current working directory and install frontend & backend dependencies
+
 ```
-$ ngx-express generate                                      // Generate folders & files inside your current working 
-                                                            // directory and install frontend & backend dependencies
+$ ngx-express generate
+```
 
-________________________________________________________________________________________________________________________
+**Method #2 -** Generate using your directory's name and manually install frontend and backend dependencies
+```
+$ ngx-express generate --installDeps=false
 
-$ ngx-express generate --installDeps=false                  // Generate using your directory's name and will not install 
-                                                            // any frontend and backend dependencies
+$ npm run install:all
+```
 
-$ npm run install:all                                       // Install frontend and backend dependencies
+**Method #3 -** Generate using your app's name and install frontend and backend dependencies
+```
+$ ngx-express generate --appName="<YOUR_APP_NAME>"
+```
 
-________________________________________________________________________________________________________________________
+**Method #4 -** Generate using your directory's name and manually install frontend and backend dependencies. 
+```
+$ ngx-express generate --appName="<YOUR_APP_NAME>" --installDeps=false 
 
-$ ngx-express generate --appName="<YOUR_APP_NAME>"          // Generate using your app's name and install frontend
-                                                            // and backend dependencies
+$ cd <YOUR_APP_NAME>
 
-________________________________________________________________________________________________________________________
-
-$ ngx-express generate --appName="<YOUR_APP_NAME>" --installDeps=false      // Generate using your directory's name and 
-                                                                            // will not install any frontend and backend 
-                                                                            // dependencies. 
-
-$ cd <YOUR_APP_NAME>                                        // Go to your project directory that was generated
-
-$ npm run install:all                                       // Install frontend and backend dependencies
+$ npm run install:all 
 ```
 
 ## How to run
