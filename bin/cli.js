@@ -2,9 +2,12 @@
 
 
 const yargs = require('yargs');
-const init = require('./init');
+const init = require('../lib/init');
 
 
+/**
+ * Setup Generate Command with appName and installDeps options/arguments
+ */
 yargs.command({
   command: 'generate',
   describe: 'Generate Backend & Frontend Folders & Files',
