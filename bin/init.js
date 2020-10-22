@@ -1,9 +1,9 @@
 const { exec } = require('child_process');
 const promisify = require('util').promisify;
-const execPromise = promisify(exec);
-const process = require('process');
 const fs = require('fs');
 const path = require('path');
+const execPromise = promisify(exec);
+const process = require('process');
 const mkdirp = require('mkdirp');
 const ncp = require('ncp').ncp;
 const prettier = require('prettier');
