@@ -1,5 +1,6 @@
 const { exec } = require('child_process');
-const execPromise = require('util').promisify(exec);
+const promisify = require('util').promisify;
+const execPromise = promisify(exec);
 const process = require('process');
 const fs = require('fs');
 const path = require('path');
@@ -19,18 +20,25 @@ const sourcePath = path.join(__dirname, '..', 'source');
  */
 async function init(appName) {
   const useCurrentDirectory = appName === '';
+  const appDirectory = useCurrentDirectory ? './' : await path.resolve(appName);
+
   appName = appName ? appName : currentDirectoryName;
 
   console.log(chalk.bold(`Generating app "${appName}"`));
 
   updateContents(appName);
 
-  await copyDirectoryFiles(appName, useCurrentDirectory);
-  await installDependencies('backend');
-  await installDependencies('frontend');
-  await initializeGit(appName, useCurrentDirectory);
+  try {
+    await copyDirectoryFiles(appName, useCurrentDirectory, appDirectory);
+    await installDependencies('backend', appDirectory);
+    await installDependencies('frontend', appDirectory);
+    await initializeGit(appName, useCurrentDirectory);
 
-  done(appName);
+    done(appName);
+  } catch(err) {
+    errorHandler(err);
+  }
+
 }
 
 
@@ -54,18 +62,19 @@ function updateContents(name) {
  *
  * @param appName
  * @param useCurrentDirectory
+ * @param appDirectory
  * @returns {Promise<void>}
  */
-async function copyDirectoryFiles(appName, useCurrentDirectory) {
-  const appDirectory = useCurrentDirectory ? './' : await path.resolve(appName);
+async function copyDirectoryFiles(appName, useCurrentDirectory, appDirectory) {
+  const status = spinner('SETUP Backend and Frontend Architecture').start();
 
-  if (useCurrentDirectory) copyFiles(appDirectory);
+  if (useCurrentDirectory) await copyFiles(appDirectory);
   else {
     await mkdirp(appName);
-    copyFiles(appDirectory);
+    await copyFiles(appDirectory);
   }
 
-  console.log(chalk.green('✔'), 'SETUP Backend and Frontend Architecture');
+  status.succeed(`SETUP Backend and Frontend Architecture`)
 }
 
 
@@ -74,25 +83,24 @@ async function copyDirectoryFiles(appName, useCurrentDirectory) {
  *
  *  @param appDirectory
  */
-function copyFiles(appDirectory) {
-  ncp(
-    sourcePath,
-    appDirectory,
-    err => errorHandler(err)
-  );
+async function copyFiles(appDirectory) {
+  const copy = promisify(ncp);
+
+  return await copy(sourcePath, appDirectory)
+    .catch(err => errorHandler(err));
 }
 
 
 /**
  * Install dependencies
  */
-async function installDependencies(type) {
+async function installDependencies(type, appDirectory) {
   const status = spinner(`Installing ${type} dependencies`).start();
   const cmd = type === 'backend'
     ? 'npm install'
     : 'cd public/app && npm install';
 
-  return await execPromise(`cd ${sourcePath} && ${cmd}`)
+  return await execPromise(`cd ${appDirectory} && ${cmd}`)
     .then(
       () => status.succeed(`INSTALLED ${type} dependencies`),
       err => errorHandler(err)
@@ -118,7 +126,7 @@ async function initializeGit(appName, useCurrentDirectory) {
  * Error Exit
  */
 function errorHandler(err) {
-  console.error(chalk.red(err));
+  console.error('\n', chalk.red(err));
   process.exit(1);
 }
 
