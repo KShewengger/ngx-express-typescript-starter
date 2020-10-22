@@ -145,7 +145,7 @@ function done(appName) {
     align: 'center'
   };
 
-  console.log(boxen(`${chalk.bold('NGX EXPRESS TYPESCRIPT STARTER')} \n ${chalk.green(`${appName} project is ready!`)}`, styles));
+  console.log(boxen(`${chalk.bold('NGX EXPRESS TYPESCRIPT STARTER')} \n ${chalk.green(`${appName} app is now ready!`)}`, styles));
 
   process.exit();
 }
