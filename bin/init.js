@@ -28,9 +28,9 @@ async function init(appName) {
   await copyDirectoryFiles(appName, useCurrentDirectory);
   await installDependencies('backend');
   await installDependencies('frontend');
-  await initializeGit(appName);
+  await initializeGit(appName, useCurrentDirectory);
 
-  done();
+  done(appName);
 }
 
 
@@ -75,7 +75,11 @@ async function copyDirectoryFiles(appName, useCurrentDirectory) {
  *  @param appDirectory
  */
 function copyFiles(appDirectory) {
-  ncp(sourcePath, appDirectory, errorHandler);
+  ncp(
+    sourcePath,
+    appDirectory,
+    err => errorHandler(err)
+  );
 }
 
 
@@ -91,7 +95,7 @@ async function installDependencies(type) {
   return await execPromise(`cd ${sourcePath} && ${cmd}`)
     .then(
       () => status.succeed(`INSTALLED ${type} dependencies`),
-      errorHandler
+      err => errorHandler(err)
     );
 }
 
@@ -99,11 +103,13 @@ async function installDependencies(type) {
 /**
  * Initialize Git
  */
-async function initializeGit(appName) {
-  await execPromise(`cd ${appName} && git init`, { silent: true, async: true })
+async function initializeGit(appName, useCurrentDirectory) {
+  const location = useCurrentDirectory ? './' : appName;
+
+  await execPromise(`cd ${location} && git init`, { silent: true, async: true })
     .then(
       () => console.log(chalk.green('✔'), 'INITIALIZED Git'),
-      errorHandler
+      err => errorHandler(err)
     );
 }
 
@@ -120,7 +126,7 @@ function errorHandler(err) {
 /**
  * Success
  */
-function done() {
+function done(appName) {
   const styles = {
     padding: 1,
     margin: 1,
@@ -129,7 +135,7 @@ function done() {
     align: 'center'
   };
 
-  console.log(boxen(`${chalk.bold('NGX EXPRESS TYPESCRIPT STARTER')} \n ${chalk.green('Project Ready!')}`, styles));
+  console.log(boxen(`${chalk.bold('NGX EXPRESS TYPESCRIPT STARTER')} \n ${chalk.green(`${appName} project is ready!`)}`, styles));
 
   process.exit();
 }
