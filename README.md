@@ -21,8 +21,11 @@ Be sure to install these packages on your global and readily accessible in your 
 $ npm install -g ngx-express-typescript-starter
 ```
 
-*In case if you have encountered a problem with global installation regarding `EACCESS` in your Linux distro, you can 
-try and apply this solution from **[StackOverflow](https://stackoverflow.com/questions/25290986/how-to-fix-eacces-issues-with-npm-install/29787931)***
+> In case you have encountered a problem installing with the CLI commands provided below, you can use this option instead
+>    
+>   1.) Clone the project: https://github.com/KShewengger/ngx-express-typescript-starter
+>  
+>   2.) Extract or Get a copy of the /source directory and rename it to your own project name.
 
 ## Setup
 
