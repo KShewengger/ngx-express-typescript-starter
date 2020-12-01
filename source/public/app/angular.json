@@ -30,7 +30,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [],
+            "styles": [
+              "src/assets/styles/main.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/",
+                "src/assets/styles",
+                "node_modules"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

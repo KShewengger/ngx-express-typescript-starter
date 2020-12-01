@@ -110,7 +110,7 @@ Run your app *(You can choose any of these commands)*
 // If you want to access any of those files in your angular components' scss files, you can do so by specifying the
 // code block below
 
-@import '@base/colors';                // If you want to access the color variables
+@import 'base/colors';                // If you want to access the color variables
 
 .header {
    color: $teal-100;                   // You can set whatever value you have supplied in your 
