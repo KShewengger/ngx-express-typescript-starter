@@ -1,5 +1,5 @@
 # ngx-express-typescript-starter
-An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & Configuration Setup
+An Angular 11 and Node Express Typescript Starter Kit with SCSS Architecture & Configuration Setup
 
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
