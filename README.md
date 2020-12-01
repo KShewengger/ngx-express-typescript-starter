@@ -4,7 +4,7 @@ An Angular 10 and Node Express Typescript Starter Kit with SCSS Architecture & C
 > Converting backend js files to ts files with typescript class format and redesigned express routes and it's api calls.
 
 ## Main Dev Tools Used
-`Angular 10` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
+`Angular 11` `Angular CLI` `Node` `Express` `Typescript` `ES6` `Babel 7`
 
 ## Prerequisites (global)
 Be sure to install these packages on your global and readily accessible in your terminal
