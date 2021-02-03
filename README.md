@@ -8,6 +8,9 @@ An Angular 11 and Node Express Typescript Starter Kit with SCSS Architecture & C
 
 ### How to run
 ```
+$ npm run install:all    - Installs all frontend & backend dependencies
+```
+```
  $ npm run ng:start      - Runs angular at http://localhost:4200
                           - Run on separate terminal
 
